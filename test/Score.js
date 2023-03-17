@@ -36,7 +36,12 @@ describe("Score", function () {
                 testing,
                 "InvalidScore"
             );
-            // await expect(teacher.setScore(others.address, 101)).to.be.revertedWith(`InvalidScore`);
+        });
+
+        it("pass setScore()", async function () {
+            expect(await testing.getScore(others.address)).to.equal(0);
+            await teacher.setScore(others.address, 99);
+            expect(await testing.getScore(others.address)).to.equal(99);
         });
     });
 });
