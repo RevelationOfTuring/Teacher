@@ -23,5 +23,10 @@ module.exports = {
                 }
             }
         ]
+    },
+    etherscan: {
+        apiKey: {
+            goerli: process.env.ETHERSCAN_API_KEY
+        }
     }
 };
